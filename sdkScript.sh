@@ -1,7 +1,7 @@
 #!/bin/bash
  
 #Trelis SDK installation
-apt-get install libarmadillo-dev
+apt-get install -y libarmadillo-dev
 cd /opt/Trelis-16.3
 mkdir sdk
 cd sdk

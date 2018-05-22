@@ -1,7 +1,11 @@
 #!/bin/bash
  
 #MOAB Installation
-cd ~
+INSTALL_ROUTE=$HOME
+cd $INSTALL_ROUTE
+
+apt install -y autoconf libtool make mpich libblas-dev liblapack-dev libhdf5-dev cmake
+
 mkdir MOAB
 cd MOAB
 mkdir bld
@@ -9,14 +13,13 @@ mkdir install
 git clone https://bitbucket.org/fathomteam/moab
 cd moab
 git checkout Version5.0
-apt install autoconf libtool make mpich libblas-dev liblapack-dev libhdf5-dev cmake;
 autoreconf -fi
 cd ../bld
-../moab/configure --prefix=/root/MOAB/install --with-hdf5=/usr/lib/x86_64-linux-gnu/hdf5/serial --enable-shared;
+../moab/configure --prefix=$INSTALL_ROUTE/MOAB/install --with-hdf5=/usr/lib/x86_64-linux-gnu/hdf5/serial --enable-shared;
 make -j4
 make check
 make install
-echo 'export PATH=$PATH:/root/MOAB/install/bin'>>/root/.bashrc;
-export PATH=$PATH:/root/MOAB/install/bin;
-echo 'export LD_LIBRARY_PATH=/root/MOAB/install/lib'>>/root/.bashrc;
-export LD_LIBRARY_PATH=/root/MOAB/install/lib;
+printf 'export PATH=$PATH:%s/MOAB/install/bin' "$INSTALL_ROUTE">>/root/.bashrc
+export PATH=$PATH:$INSTALL_ROUTE/MOAB/install/bin
+printf 'export LD_LIBRARY_PATH=%s/MOAB/install/lib' "$INSTALL_ROUTE">>/root/.bashrc
+export LD_LIBRARY_PATH=$INSTALL_ROUTE/MOAB/install/lib
