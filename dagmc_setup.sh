@@ -10,12 +10,14 @@ cd DAGMC
 git checkout develop
 cd ..
 mkdir bld
-mkdir install
+DAGMC_INSTALL_DIR=$INSTALL_ROOT/dagmc/install
+mkdir $DAGMC_INSTALL_DIR
 cd bld
-cmake ../DAGMC -DCMAKE_INSTALL_PREFIX=$INSTALL_ROOT/dagmc/install
+cmake ../DAGMC -DCMAKE_INSTALL_PREFIX=$DAGMC_INSTALL_DIR
 make 
-make install 
-printf 'export PATH=$PATH:$INSTALL_ROOT/dagmc/install/bin'>>$HOME.bashrc
-export PATH=$PATH:$INSTALL_ROOT/dagmc/install/bin
-printf 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$INSTALL_ROOT/dagmc/install/lib'>>$HOME/.bashrc
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$INSTALL_ROOT/dagmc/install/lib
+make install
+printf '\nConsider adding the following lines to .bashrc:\n'
+printf 'export PATH=$DAGMC_INSTALL_DIR/bin:$PATH\n'
+export PATH=$DAGMC_INSTALL_DIR/bin:$PATH
+printf 'export LD_LIBRARY_PATH=$DAGMC_INSTALL_DIR/lib:$LD_LIBRARY_PATH\n'
+export LD_LIBRARY_PATH=$DAGMC_INSTALL_DIR/lib:$LD_LIBRARY_PATH
