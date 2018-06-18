@@ -18,6 +18,11 @@ cmake ../moab -DCMAKE_INSTALL_PREFIX=$MOAB_INSTALL_DIR \
 make -j4
 make check
 make install
+
+#Bandaid code, to make master branch work neatly with DAGMC in script
+echo 'set(MOAB_INCLUDE_DIRS "/root/MOAB/install/include" "/usr/include/eigen3")'\
+>>/root/MOAB/install/lib/cmake/MOAB/MOABConfig.cmake
+
 printf '\nConsider adding the following lines to .bashrc:\n'
 printf 'export PATH=$MOAB_INSTALL_DIR/bin:$PATH\n'
 export PATH=$MOAB_INSTALL_DIR/bin:$PATH
