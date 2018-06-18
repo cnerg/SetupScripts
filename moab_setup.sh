@@ -11,7 +11,6 @@ mkdir $MOAB_INSTALL_DIR
 git clone https://bitbucket.org/fathomteam/moab
 
 cd moab
-git checkout Version5.0
 cd ../bld
 cmake ../moab -DCMAKE_INSTALL_PREFIX=$MOAB_INSTALL_DIR \
  -DHDF5_ROOT=/usr/lib/x86_64-linux-gnu/hdf5/serial/ -DENABLE_HDF5=ON \
@@ -24,3 +23,5 @@ printf 'export PATH=$MOAB_INSTALL_DIR/bin:$PATH\n'
 export PATH=$MOAB_INSTALL_DIR/bin:$PATH
 printf 'export LD_LIBRARY_PATH=$MOAB_INSTALL_DIR/lib:$LD_LIBRARY_PATH\n'
 export LD_LIBRARY_PATH=$MOAB_INSTALL_DIR/lib:$LD_LIBRARY_PATH
+
+cd $INSTALL_ROOT

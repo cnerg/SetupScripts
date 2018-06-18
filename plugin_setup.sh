@@ -21,3 +21,5 @@ cd ../DAGMC-Trelis
 cp install.sh $PLUGINDIR
 cd $PLUGINDIR/../..
 bash plugins/svalinn/install.sh
+
+cd $INSTALL_ROOT

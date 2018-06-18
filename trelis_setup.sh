@@ -9,3 +9,5 @@ curl -1 -v --disable-epsv --ftp-skip-pasv-ip -u sstern3@wisc.edu --ftp-ssl \ --o
     #Replace sstern3 with username as needed; external password must be set on box
     #Currently uses Trelis 16.3, since SDK appears incompatible with 16.4
 dpkg -i trelis.deb #This installs Trelis 16.3, files can be found in /opt
+
+cd $INSTALL_ROOT

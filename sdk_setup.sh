@@ -11,3 +11,4 @@ sudo ln -s ../sdk/bin/* .
 cd ..
 sudo ln -s sdk/include .
 
+cd $HOME
