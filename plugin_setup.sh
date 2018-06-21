@@ -7,12 +7,12 @@ mkdir svalinn_plugin
 cd svalinn_plugin
 git clone https://github.com/svalinn/DAGMC-Trelis.git
 cd DAGMC-Trelis
-git clone -b use_eigen --single-branch https://github.com/svalinn/mcnp2cad
+git clone -b use_eigen --single-branch https://github.com/SamuelStern/mcnp2cad
 cd ..
 mkdir bld
 cd bld
 
-cmake ../DAGMC-Trelis -DCMAKE_PREFIX_PATH=/opt/Trelis-16.3/bin\ -DBUILD_DAGMC_EXPORTER=OFF
+cmake ../DAGMC-Trelis -DCMAKE_PREFIX_PATH=/opt/Trelis-16.3/bin/ -DBUILD_DAGMC_EXPORTER=OFF
 make
 PLUGINDIR=/opt/Trelis-16.3/bin/plugins/svalinn
 mkdir $PLUGINDIR
