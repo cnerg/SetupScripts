@@ -6,12 +6,13 @@ cd $INSTALL_ROUTE
 mkdir svalinn_plugin
 cd svalinn_plugin
 git clone https://github.com/svalinn/DAGMC-Trelis.git
+cd DAGMC-Trelis
+git clone -b use_eigen --single-branch https://github.com/svalinn/mcnp2cad
+cd ..
 mkdir bld
 cd bld
-#The following line fails if the script is run not as source
-cmake ../DAGMC-Trelis -DCMAKE_PREFIX_PATH=/opt/Trelis-16.3/bin\
- -DBUILD_IGEOM=ON -DBUILD_IGEOM_TESTS=ON -DBUILD_MCNP_IMPORTER=OFF\
- -DMOAB_DIR=$INSTALL_ROUTE/MOAB/install/lib -DDAGMC_DIR=$INSTALL_ROUTE/dagmc/install/
+
+cmake ../DAGMC-Trelis -DCMAKE_PREFIX_PATH=/opt/Trelis-16.3/bin\ -DBUILD_DAGMC_EXPORTER=OFF
 make
 PLUGINDIR=/opt/Trelis-16.3/bin/plugins/svalinn
 mkdir $PLUGINDIR
