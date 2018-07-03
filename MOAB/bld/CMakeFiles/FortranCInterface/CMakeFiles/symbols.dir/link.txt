@@ -1,2 +1,0 @@
-/usr/bin/ar qc libsymbols.a  CMakeFiles/symbols.dir/mymodule_.c.o CMakeFiles/symbols.dir/my_module_.c.o CMakeFiles/symbols.dir/symbols/my_sub.c.o CMakeFiles/symbols.dir/symbols/my_sub_.c.o CMakeFiles/symbols.dir/symbols/my_sub__.c.o CMakeFiles/symbols.dir/symbols/MY_SUB-UPPER.c.o CMakeFiles/symbols.dir/symbols/mysub.c.o CMakeFiles/symbols.dir/symbols/mysub_.c.o CMakeFiles/symbols.dir/symbols/MYSUB-UPPER.c.o
-/usr/bin/ranlib libsymbols.a
