@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #DAGMC Installation
-INSTALL_ROOT=$HOME
+INSTALL_ROOT=$HOME/cnerg/SetupScripts/
 cd $INSTALL_ROOT
 mkdir dagmc
 cd dagmc

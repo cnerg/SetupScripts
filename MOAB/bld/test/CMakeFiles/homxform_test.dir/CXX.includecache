@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/samuel/cnerg/SetupScripts/MOAB/moab/src/moab/HomXform.hpp
+math.h
+-
+ostream
+-
+
+/home/samuel/cnerg/SetupScripts/MOAB/moab/test/homxform_test.cpp
+moab/HomXform.hpp
+/home/samuel/cnerg/SetupScripts/MOAB/moab/test/moab/HomXform.hpp
+assert.h
+-
+iostream
+-
+

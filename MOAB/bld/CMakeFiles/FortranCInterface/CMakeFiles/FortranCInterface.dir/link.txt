@@ -1,0 +1,1 @@
+/usr/bin/gfortran     -pedantic -fpic -Wall -pipe -Wno-long-long -Wextra -Wno-cast-align -Wsign-compare -Wpointer-arith -Wformat -Wformat-security -Wunused-parameter -fstack-protector-all -mtune=native CMakeFiles/FortranCInterface.dir/main.F.o CMakeFiles/FortranCInterface.dir/call_sub.f.o  -o FortranCInterface  -L/usr/lib/gcc/x86_64-linux-gnu/5 libsymbols.a libmyfort.a -lc 
