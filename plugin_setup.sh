@@ -1,7 +1,9 @@
 #!/bin/bash
  
 #Finally, install the actual svalinn plugin
-INSTALL_ROUTE=$HOME
+echo Enter desired plugin download directory
+read download_dir
+INSTALL_ROOT=download_dir
 cd $INSTALL_ROUTE
 mkdir svalinn_plugin
 cd svalinn_plugin
