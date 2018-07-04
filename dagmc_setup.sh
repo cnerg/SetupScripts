@@ -1,7 +1,9 @@
 #!/bin/bash
 
 #DAGMC Installation
-INSTALL_ROOT=$HOME/cnerg/
+echo Enter desired DAGMC installation directory:
+read install_dir
+INSTALL_ROOT=install_dir
 cd $INSTALL_ROOT
 mkdir dagmc
 cd dagmc

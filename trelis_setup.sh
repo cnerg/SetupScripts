@@ -1,7 +1,9 @@
 #!/bin/bash
 
 #Trelis Installation
-INSTALL_ROOT=$HOME
+echo Enter desired trelis download directory:
+read download_dir
+INSTALL_ROOT=download_dir
 cd $INSTALL_ROOT
 mkdir trelis
 cd trelis
