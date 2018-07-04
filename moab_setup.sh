@@ -1,9 +1,7 @@
 #!/bin/bash
  
 #MOAB Installation
-echo Enter desired MOAB installation directory
-read install_dir
-INSTALL_ROOT=install_dir
+INSTALL_ROOT=$HOME/cnerg
 cd $INSTALL_ROOT
 mkdir MOAB
 cd MOAB
