@@ -1,9 +1,8 @@
 #!/bin/bash
  
 #MOAB Installation
-echo Enter desired MOAB installation directory
-read install_dir
-INSTALL_ROOT=install_dir
+INSTALL_ROOT=$HOME/cnerg
+mkdir $INSTALL_ROOT
 cd $INSTALL_ROOT
 mkdir MOAB
 cd MOAB
@@ -22,13 +21,11 @@ make check
 make install
 
 #Bandaid code, to make master branch work neatly with DAGMC in script
-echo 'set(MOAB_INCLUDE_DIRS "/root/MOAB/install/include" "/usr/include/eigen3")'\
->>/root/MOAB/install/lib/cmake/MOAB/MOABConfig.cmake
+echo "set(MOAB_INCLUDE_DIRS "$MOAB_INSTALL_DIR/include" "/usr/include/eigen3")"\
+>>$MOAB_INSTALL_DIR/lib/cmake/MOAB/MOABConfig.cmake
 
-printf '\nConsider adding the following lines to .bashrc:\n'
-printf 'export PATH=$MOAB_INSTALL_DIR/bin:$PATH\n'
-export PATH=$MOAB_INSTALL_DIR/bin:$PATH
-printf 'export LD_LIBRARY_PATH=$MOAB_INSTALL_DIR/lib:$LD_LIBRARY_PATH\n'
-export LD_LIBRARY_PATH=$MOAB_INSTALL_DIR/lib:$LD_LIBRARY_PATH
+printf '\nConsider running the following commands, and adding them to .bashrc:\n'
+printf "export PATH=$MOAB_INSTALL_DIR/bin:"'$PATH\n'
+printf "export LD_LIBRARY_PATH=$MOAB_INSTALL_DIR/lib:"'$LD_LIBRARY_PATH\n'
 
 cd $INSTALL_ROOT
