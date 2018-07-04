@@ -2,7 +2,7 @@
  
 #Finally, install the actual svalinn plugin
 INSTALL_ROOT=$HOME/cnerg
-cd $INSTALL_ROUTE
+cd $INSTALL_ROOT
 mkdir svalinn_plugin
 cd svalinn_plugin
 git clone https://github.com/svalinn/DAGMC-Trelis.git
@@ -12,7 +12,7 @@ cd ..
 mkdir bld
 cd bld
 
-cmake ../DAGMC-Trelis -DCMAKE_PREFIX_PATH=/opt/Trelis-16.3/bin/ -DBUILD_DAGMC_EXPORTER=OFF
+cmake ../DAGMC-Trelis -DCMAKE_PREFIX_PATH=/opt/Trelis-16.3/bin/ -DBUILD_DAGMC_EXPORTER=OFF 
 make
 PLUGINDIR=/opt/Trelis-16.3/bin/plugins/svalinn
 mkdir $PLUGINDIR
