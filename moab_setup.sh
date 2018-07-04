@@ -1,7 +1,7 @@
 #!/bin/bash
  
 #MOAB Installation
-INSTALL_ROOT=$HOME/cnerg/SetupScripts
+INSTALL_ROOT=$HOME/cnerg/
 cd $INSTALL_ROOT
 mkdir MOAB
 cd MOAB
