@@ -11,7 +11,7 @@ cd bld
 #The following line fails if the script is run not as source
 cmake ../DAGMC-Trelis -DCMAKE_PREFIX_PATH=/opt/Trelis-16.3/bin\
  -DBUILD_IGEOM=ON -DBUILD_IGEOM_TESTS=ON -DBUILD_MCNP_IMPORTER=OFF\
- -DMOAB_DIR=$INSTALL_ROOT/MOAB/install/lib/cmake/MOAB -DDAGMC_DIR=$INSTALL_ROOT/dagmc/install/
+ -DMOAB_DIR=$INSTALL_ROOT/MOAB/install/lib/cmake/MOAB -DDAGMC_DIR=$INSTALL_ROOT/dagmc/install/\
 make
 PLUGINDIR=/opt/Trelis-16.3/bin/plugins/svalinn
 mkdir $PLUGINDIR
