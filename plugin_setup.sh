@@ -21,8 +21,8 @@ PLUGINDIR=/opt/Trelis-16.3/bin/plugins/svalinn
 mkdir $PLUGINDIR
 cp libsvalinn_plugin.so $PLUGINDIR
 cp libiGeom.so $PLUGINDIR
-cp $INSTALL_ROUTE/MOAB/install/lib/libMOAB.so.5 $PLUGINDIR
-cp $INSTALL_ROUTE/dagmc/install/lib/libmakeWatertight.so $PLUGINDIR
+cp $INSTALL_ROOT/MOAB/install/lib/libMOAB.so.5 $PLUGINDIR
+cp $INSTALL_ROOT/dagmc/install/lib/libmakeWatertight.so $PLUGINDIR
 cd ../DAGMC-Trelis
 cp install.sh $PLUGINDIR
 cd $PLUGINDIR/../..
