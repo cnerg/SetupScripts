@@ -12,7 +12,10 @@ cd ..
 mkdir bld
 cd bld
 
-cmake ../DAGMC-Trelis -DCMAKE_PREFIX_PATH=/opt/Trelis-16.3/bin/ -DBUILD_DAGMC_EXPORTER=OFF 
+cmake ../DAGMC-Trelis -DCMAKE_PREFIX_PATH=/opt/Trelis-16.3/bin/ -DBUILD_DAGMC_EXPORTER=OFF\
+ -DBUILD_MCNP_IMPORTER=OFF -DBUILD_IGEOM=ON
+cmake ../DAGMC-Trelis/ -DCMAKE_PREFIX_PATH=/opt/Trelis-16.3/bin/ -DBUILD_DAGMC_EXPORTER=OFF\
+ -DBUILD_MCNP_IMPORTER=ON
 make
 PLUGINDIR=/opt/Trelis-16.3/bin/plugins/svalinn
 mkdir $PLUGINDIR
