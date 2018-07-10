@@ -1,7 +1,7 @@
 #!/bin/bash
  
 #Finally, install the actual svalinn plugin
-INSTALL_ROOT=$HOME/cnerg
+source install_dir.sh
 cd $INSTALL_ROOT
 mkdir svalinn_plugin
 cd svalinn_plugin

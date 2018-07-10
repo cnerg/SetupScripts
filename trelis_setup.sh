@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Trelis Installation
-INSTALL_ROOT=$HOME/cnerg
+source install_dir.sh
 cd $INSTALL_ROUTE
 mkdir trelis
 cd trelis
