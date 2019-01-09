@@ -1,25 +1,31 @@
 #!/bin/bash
 
-#DAGMC Installation
+#DAGMC Directory Setup
 source install_dir.sh
 mkdir $INSTALL_ROOT
 cd $INSTALL_ROOT
-mkdir dagmc
-cd dagmc
-git clone -b develop https://github.com/svalinn/DAGMC
+mkdir DAG-mcnp
+cd DAG-mcnp
+git clone -b mcnp6.2 https://github.com/ljacobson64/DAGMC.git
 mkdir bld
 
-DAGMC_INSTALL_DIR=$INSTALL_ROOT/dagmc/install
-MOAB_CONFIG_DIR=$INSTALL_ROOT/MOAB/install/lib/cmake/MOAB
+DAGMC_INSTALL_DIR=$INSTALL_ROOT/DAG-mcnp/install
+MOAB_CONFIG_DIR=$INSTALL_ROOT/MOAB/lib/cmake/MOAB
 mkdir $DAGMC_INSTALL_DIR
-cd bld
-cmake ../DAGMC -DCMAKE_INSTALL_PREFIX=$DAGMC_INSTALL_DIR -DMOAB_CMAKE_CONFIG=$MOAB_CONFIG_DIR
+
+#MCNP Source code patch
+cd $INSTALL_ROOT/DAG-mcnp/DAGMC/src/mcnp/mcnp6
+cp -r $INSTALL_ROOT/MY_MCNP/MCNP_CODE/MCNP620/Source .
+chmod -R u+rw Source
+patch -p0 < patch/mcnp620.patch
+
+#Building/Installation
+cd $INSTALL_ROOT/DAG-mcnp/bld
+cmake ../DAGMC -DCMAKE_INSTALL_PREFIX=$DAGMC_INSTALL_DIR \
+ -DMOAB_CMAKE_CONFIG=$MOAB_CONFIG_DIR \
+ -DMOAB_DIR=$INSTALL_ROOT/MOAB
 make 
 make install
 run-parts ../install/tests
-
-printf '\nConsider running the following lines and adding them to .bashrc:\n'
-printf "export PATH=$DAGMC_INSTALL_DIR/bin"':$PATH\n'
-printf "export LD_LIBRARY_PATH=$DAGMC_INSTALL_DIR/lib"':$LD_LIBRARY_PATH\n'
 
 cd $INSTALL_ROOT
